@@ -14,11 +14,9 @@ public class Ques4MoveSpace {
         int i = 0;
         while(strChars[i] != '\0'){
             ++ originLength;
-
             if(strChars[i] == ' '){
                 ++ numOfBlank;
             }
-
             ++ i;
         }
         int newlength = originLength + numOfBlank * 2;
