@@ -153,23 +153,22 @@ public class Ques8Sort {
     private void quickSortHelper(int[] nums, int left, int right) {
         if(left < right){
             int pivot = partition(nums, left, right);  // 将数组分成两部分
-            quickSortHelper(nums, left, pivot - 1);    // 递归排序左部分
-            quickSortHelper(nums, pivot + 1, right);   // 递归排序右部分
+            if(pivot > left) quickSortHelper(nums, left, pivot - 1);    // 递归排序左部分
+            if(pivot < right) quickSortHelper(nums, pivot + 1, right);   // 递归排序右部分
         }
     }
 
     private int partition(int[] nums, int left, int right) {
         int pivot = nums[left];
-        while(left < right){
-            while(left < right && nums[right] > pivot) --right;
+        while (left < right) {
+            while (left < right && nums[right] > pivot) --right;
             nums[left] = nums[right];
-            while(left < right && nums[left] <= pivot) ++left;
+            while (left < right && nums[left] <= pivot) ++left;
             nums[right] = nums[left];
         }
         nums[left] = pivot;
         return left;
     }
-
 
     public static void main(String[] args) {
         Ques8Sort sort = new Ques8Sort();
