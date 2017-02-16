@@ -22,6 +22,20 @@ public class TestInstance {
         return l1;
     }
 
+    public static RandomListNode getRandomList(){
+        RandomListNode n1 = new RandomListNode(1);
+        RandomListNode n2 = new RandomListNode(2);
+        RandomListNode n3 = new RandomListNode(3);
+        RandomListNode n4 = new RandomListNode(4);
+        n1.next = n2;
+        n1.random = n3;
+        n2.next = n3;
+        n2.random = n4;
+        n3.next = n4;
+        n4.random = n1;
+        return n1;
+    }
+
     public static ListNode getEmptyList(){
         return null;
     }
