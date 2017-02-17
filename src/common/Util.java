@@ -10,4 +10,11 @@ public class Util {
         nums[j] = nums[i];
         nums[i] = temp;
     }
+
+    public static void swap(char[] nums, int j, int i) {
+        char temp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = temp;
+    }
+
 }
