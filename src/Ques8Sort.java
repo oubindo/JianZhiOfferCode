@@ -83,24 +83,11 @@ public class Ques8Sort {
         }
     }
 
+    // 这样输出的话，原数组就被更改了，如果不想原数组被改变，就使用一个临时数组
     private void merge_array(int[] nums, int start, int mid, int end) {
         int[] temp = new int[nums.length];
-        int resultIndex = start;
         int i = start, j = mid + 1;
-        /*while (i <= mid && j <= end) {
-            if (nums[i] < nums[j]) {
-                temp[resultIndex++] = nums[i++];
-            } else {
-                temp[resultIndex++] = nums[j++];
-            }
-        }
-        while (i <= mid) {
-            temp[resultIndex++] = nums[i++];
-        }
-        while (j <= end) {
-            temp[resultIndex++] = nums[j++];
-        }*/
-        for(int m = start; m <=end; m++){
+        for(int m = start; m <= end; m++){
             if(i > mid){
                 temp[m] = nums[j++];
             }else if(j > end){
@@ -111,10 +98,7 @@ public class Ques8Sort {
                 temp[m] = nums[j++];
             }
         }
-
-        for(int k = start; k <= end; k++){
-            nums[k] = temp[k];
-        }
+        System.arraycopy(temp, start, nums, start, end + 1 - start);
     }
 
     // 归并排序：迭代版本.迭代版本思想和递归版本相反，是先两两配对，然后在进行比较，再合并
