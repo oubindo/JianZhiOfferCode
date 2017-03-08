@@ -1,3 +1,5 @@
+package JavaLearn;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -26,7 +28,7 @@ public class DynamicTest {
         consumer(proxy);
         System.out.println("=============");
         RealObject object1 = new RealObject();
-        Class clazz = Class.forName("RealObject");
+        Class clazz = Class.forName("JavaLearn.RealObject");
         Method test = clazz.getDeclaredMethod("testPrivate");
         test.setAccessible(true);
         test.invoke(object1);

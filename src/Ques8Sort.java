@@ -119,7 +119,7 @@ public class Ques8Sort {
     }
 
     /* 堆排序：堆排序基于最大堆(每个双亲节点的值都比子女大)或者最小堆，可以视为一种完全二叉树，即除了最后一层其他的都是填满的。
-    所以有 Parent(i) = i/2, left(i) = 2*i，right(i) = 2*i + 1，所以对于一个n元素的数组而言 ，我们创建嘴大堆的过程就应该在1-n/2的元素上进行
+    所以有 JavaLearn.Parent(i) = i/2, left(i) = 2*i，right(i) = 2*i + 1，所以对于一个n元素的数组而言 ，我们创建嘴大堆的过程就应该在1-n/2的元素上进行
     见MaxHeap。time:O(nlgn)  space:O(1)
     */
 
